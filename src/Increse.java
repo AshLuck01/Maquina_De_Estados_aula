@@ -1,8 +1,8 @@
 public class Increse extends AbstractState {
 
-    public Increse(Monster monster) {
-        super(monster);
-    }
+    public Increse(Soldado soldado,Monster monster) {
+        super(soldado, monster);}
+
 
 
     public void enter() {
@@ -19,7 +19,7 @@ public class Increse extends AbstractState {
         printStats("(crecendo)");
 
         if(getMonster().big = true) {
-            getMonster().setStado(new Heal(getMonster()));
+            getMonster().setStado(new Heal(getSoldado(),getMonster()));
         }
     }
 }

@@ -1,8 +1,7 @@
 public class Reloading extends AbstractState {
 
     public Reloading(Soldado soldado) {
-        super(soldado);
-    }
+        super(soldado,null );}
 
 
     public void enter() {
@@ -19,7 +18,7 @@ public class Reloading extends AbstractState {
         printStats("Ching, Ching ");
 
         if(getSoldado().getBala() >= 50) {
-            getSoldado().setStado(new Shooting(getSoldado()));
+            getSoldado().setStado(new Shooting(getSoldado(),null));
         }
     }
 }

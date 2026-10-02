@@ -1,7 +1,7 @@
 public class Shooting extends AbstractState {
 
-    public Shooting(Soldado soldado) {
-        super(soldado);
+    public Shooting(Soldado Soldado,Monster monster) {
+        super(Soldado, monster);
     }
 
 
