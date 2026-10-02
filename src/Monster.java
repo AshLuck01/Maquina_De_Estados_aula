@@ -12,7 +12,7 @@ public class Monster {
 
     public void addVida(int vida){
         this.vida += vida;
-        this.vida = Math.min(this.vida,0);
+        this.vida = Math.min(this.vida,300);
     }
     public void addStun(int stun){
         this.vida += stun;
