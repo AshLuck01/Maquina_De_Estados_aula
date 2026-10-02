@@ -1,7 +1,7 @@
 public class Stunned extends AbstractState {
 
-    public Stunned(Monster monster) {
-        super(monster);
+    public Stunned(Soldado soldado, Monster monster) {
+        super(soldado, monster);
     }
 
 
@@ -20,7 +20,7 @@ public class Stunned extends AbstractState {
         printStats("estrelas girando");
 
         if(getMonster().getStun() == 0) {
-            getMonster().setStado(new Increse(getMonster()));
+            getMonster().setStado(new Increse(getSoldado(),getMonster()));
         }
     }
 }

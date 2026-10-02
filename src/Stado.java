@@ -12,6 +12,7 @@ public interface Stado {
     public static void main(String[] args) {
         Soldado soldado = new Soldado();
         Monster monster = new Monster();
+        monster.iniciarMonstro(soldado);
         while (true) {
             soldado.update();
             monster.update();

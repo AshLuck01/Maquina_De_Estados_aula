@@ -1,8 +1,8 @@
 public class Atacando extends AbstractState {
 
-    public Atacando(Monster monster) {
-        super(monster);
-    }
+    public Atacando(Soldado soldado,Monster monster) {
+        super(soldado, monster);}
+
 
 
     public void enter() {
@@ -20,9 +20,10 @@ public class Atacando extends AbstractState {
             printStats("AAAAHH MEU OMBRO");
         }
         if(getMonster().getVida() <= 30 && !getMonster().getBig()) {
-            getMonster().setStado(new Stunned(getMonster()));
+            getMonster().setStado(new Stunned(getSoldado(),getMonster()));
         } else if (getMonster().getVida() <= 100 && getMonster().getBig()) {
-            getMonster().setStado(new Heal(getMonster()));
+
+            getMonster().setStado(new Heal(getSoldado(), getMonster()));
         }
     }
 }

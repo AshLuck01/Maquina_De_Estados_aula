@@ -1,8 +1,7 @@
 public class Heal extends AbstractState {
 
-    public Heal(Monster monster) {
-        super(monster);
-    }
+    public Heal(Soldado soldado,Monster monster) {
+        super(soldado, monster);}
 
 
     public void enter() {
@@ -19,7 +18,7 @@ public class Heal extends AbstractState {
         printStats("(curando)");
 
         if(getMonster().getVida() == 300) {
-            getMonster().setStado(new Atacando(getMonster()));
+            getMonster().setStado(new Atacando(getSoldado(),getMonster()));
         }
     }
 }

@@ -1,9 +1,9 @@
 public class Soldado {
     private int bala = 50;
-    public   boolean Shoot;
+    public boolean Shoot;
 
 
-    private Stado stado = new Shooting(this);
+    private Stado stado = new Shooting(this, null);
 
     public int getBala() {
         return bala;
