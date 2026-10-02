@@ -15,7 +15,7 @@ public class Heal extends AbstractState {
 
 
     public void execute() {
-        getMonster().addVida (10);
+        getMonster().addVida (50);
         printStats("(curando)");
 
         if(getMonster().getVida() == 300) {

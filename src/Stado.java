@@ -11,10 +11,10 @@ public interface Stado {
 
     public static void main(String[] args) {
         Soldado soldado = new Soldado();
-        Monster monster = new Monster();
+        Monster Monster = new Monster();
         while (true) {
             soldado.update();
-            monster.update();
+            Monster.update();
 
             try {
                 Thread.sleep(3000);
