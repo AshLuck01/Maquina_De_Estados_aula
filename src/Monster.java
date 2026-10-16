@@ -4,7 +4,7 @@ public class Monster implements Papeis {
     private int stun = 5;
     public boolean big = false;
 
-    private Stado stado = new Atacando (this);
+    private Estado estado = new Atacado (this);
 
     public int getVida(){return vida;}
     public int getStun(){return stun;}
@@ -19,18 +19,18 @@ public class Monster implements Papeis {
         this.stun = Math.max(this.stun,0);
     }
 
-    public void update() {stado.execute();}
+    public void update() {estado.execute();}
 
-    public void setStado(Stado stado){
-        this.stado.leave();
-        this.stado = stado;
+    public void setStado(Estado stado){
+        this.estado.leave();
+        this.estado = estado;
         stado.enter();
     }
 
 
     public void printStats(String stado) {
         System.out.println("\n---- Monster ----");
-        System.out.println(stado);
+        System.out.println(estado);
         System.out.println("vida " + getVida());
         System.out.println("stun " + getStun());
         System.out.println("Grande? " + getBig());

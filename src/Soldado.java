@@ -3,7 +3,7 @@ public class Soldado implements Papeis  {
     public   boolean Shoot;
 
 
-    private Stado stado = new Shooting(this);
+    private Estado estado = new Shooting(this);
 
     public int getBala() {
         return bala;
@@ -16,18 +16,18 @@ public class Soldado implements Papeis  {
     }
 
     public void update() {
-        stado.execute();
+        estado.execute();
     }
 
-    public void setStado(Stado stado) {
-        this.stado.leave();
-        this.stado = stado;
-        stado.enter();
+    public void setStado(Estado estado) {
+        this.estado.leave();
+        this.estado = estado;
+        estado.enter();
     }
     public void printStats(String stado) {
         System.out.println("\n---- Soldado ----");
-        System.out.println(stado);
-        System.out.println("muniçao " + getBala());
+        System.out.println(estado);
+        System.out.println("munição " + getBala());
         System.out.println("atirando? " + getShoot());
 
     }

@@ -1,6 +1,6 @@
 public interface Papeis {
     void printStats(String stado);
     void update();
-    void setStado(Stado<Papeis> Stado);
+    void setStado(Estado<Papeis> Stado);
 
 }

@@ -19,7 +19,7 @@ public class Heal extends AbstractState<Monster> {
         getPapeis().printStats("(curando)");
 
         if(getPapeis().getVida() == 300) {
-            getPapeis().setStado(new Atacando(getPapeis()));
+            getPapeis().setStado(new Atacado(getPapeis()));
         }
     }
 }

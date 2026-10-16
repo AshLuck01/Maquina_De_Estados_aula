@@ -1,4 +1,4 @@
-public abstract class AbstractState<C> implements Stado<C> {
+public abstract class AbstractState<C> implements Estado<C> {
     private final C papeis;
     public AbstractState(C papeis) {this.papeis = papeis;}
 
