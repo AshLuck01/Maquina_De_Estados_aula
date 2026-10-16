@@ -1,4 +1,4 @@
-public class Shooting extends AbstractState {
+public class Shooting extends AbstractState<Soldado> {
 
     public Shooting(Soldado soldado) {
         super(soldado);
@@ -7,7 +7,7 @@ public class Shooting extends AbstractState {
 
     public void enter() {
         System.out.println("inimigo a vista FOGO");
-        getSoldado().Shoot = true;
+        getPapeis().Shoot = true;
     }
 
     public void leave() {
@@ -16,12 +16,11 @@ public class Shooting extends AbstractState {
 
 
     public void execute() {
-        getSoldado().subBala (-5);
+        getPapeis().subBala (-5);
+        getPapeis().printStats("PEW PEW PEW");
 
-        printStats("PEW PEW PEW");
-
-        if(getSoldado().getBala() <= 0) {
-            getSoldado().setStado(new Reloading(getSoldado()));
+        if(getPapeis().getBala() <= 0) {
+            getPapeis().setStado(new Reloading(getPapeis()));
         }
     }
 }

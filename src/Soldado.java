@@ -1,4 +1,4 @@
-public class Soldado {
+public class Soldado implements Papeis  {
     private int bala = 50;
     public   boolean Shoot;
 
@@ -14,10 +14,7 @@ public class Soldado {
         this.bala  += bala;
         this.bala = Math.max(this.bala, 0);
     }
-    public void addBala(int bala) {
-        this.bala  += bala;
-        this.bala = Math.min(this.bala, 50);
-    }
+
     public void update() {
         stado.execute();
     }
@@ -27,6 +24,12 @@ public class Soldado {
         this.stado = stado;
         stado.enter();
     }
+    public void printStats(String stado) {
+        System.out.println("\n---- Soldado ----");
+        System.out.println(stado);
+        System.out.println("muniçao " + getBala());
+        System.out.println("atirando? " + getShoot());
 
+    }
 
 }

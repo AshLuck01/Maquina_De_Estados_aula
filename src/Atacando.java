@@ -1,4 +1,4 @@
-public class Atacando extends AbstractState {
+public class Atacando extends AbstractState<Monster>  {
 
     public Atacando(Monster monster) {
         super(monster);
@@ -15,14 +15,15 @@ public class Atacando extends AbstractState {
 
 
     public void execute() {
-        if (getSoldado().getShoot()) {
-            getMonster().addVida(-15);
-            printStats("AAAAHH MEU OMBRO");
-        }
-        if(getMonster().getVida() <= 30 && !getMonster().getBig()) {
-            getMonster().setStado(new Stunned(getMonster()));
-        } else if (getMonster().getVida() <= 100 && getMonster().getBig()) {
-            getMonster().setStado(new Heal(getMonster()));
+
+            getPapeis().addVida(-15);
+
+        getPapeis().printStats("AHHH MEU OMBRO");
+
+        if(getPapeis().getVida() <= 30 && !getPapeis().getBig()) {
+            getPapeis().setStado(new Stunned(getPapeis()));
+        } else if (getPapeis().getVida() <= 100 && getPapeis().getBig()) {
+            getPapeis().setStado(new Heal(getPapeis()));
         }
     }
 }

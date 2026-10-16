@@ -1,4 +1,4 @@
-public class Monster {
+public class Monster implements Papeis {
 
     private int vida = 100;
     private int stun = 5;
@@ -12,14 +12,12 @@ public class Monster {
 
     public void addVida(int vida){
         this.vida += vida;
-        this.vida = Math.min(this.vida,0);
+        this.vida = Math.min(this.vida,300);
     }
     public void addStun(int stun){
-        this.vida += stun;
-        this.vida = Math.max(this.stun,0);
+        this.stun += stun;
+        this.stun = Math.max(this.stun,0);
     }
-
-
 
     public void update() {stado.execute();}
 
@@ -30,4 +28,12 @@ public class Monster {
     }
 
 
+    public void printStats(String stado) {
+        System.out.println("\n---- Monster ----");
+        System.out.println(stado);
+        System.out.println("vida " + getVida());
+        System.out.println("stun " + getStun());
+        System.out.println("Grande? " + getBig());
+
+    }
 }

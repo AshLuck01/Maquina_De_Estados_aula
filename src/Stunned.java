@@ -1,4 +1,4 @@
-public class Stunned extends AbstractState {
+public class Stunned extends AbstractState<Monster> {
 
     public Stunned(Monster monster) {
         super(monster);
@@ -15,12 +15,12 @@ public class Stunned extends AbstractState {
 
 
     public void execute() {
-        getMonster().addVida (-5);
-        getMonster().addStun (-1);
-        printStats("estrelas girando");
+        getPapeis().addVida (-5);
+        getPapeis().addStun (-1);
+        getPapeis().printStats("estrelas girando");
 
-        if(getMonster().getStun() == 0) {
-            getMonster().setStado(new Increse(getMonster()));
+        if(getPapeis().getStun() == 0) {
+            getPapeis().setStado(new Increse(getPapeis()));
         }
     }
 }

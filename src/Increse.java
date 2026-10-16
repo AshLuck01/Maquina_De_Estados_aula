@@ -1,4 +1,4 @@
-public class Increse extends AbstractState {
+public class Increse extends AbstractState<Monster> {
 
     public Increse(Monster monster) {
         super(monster);
@@ -15,11 +15,11 @@ public class Increse extends AbstractState {
 
 
     public void execute() {
-        getMonster().big = true;
-        printStats("(crecendo)");
+        getPapeis().big = true;
+        getPapeis().printStats("(crecendo)");
 
-        if(getMonster().big = true) {
-            getMonster().setStado(new Heal(getMonster()));
+        if(getPapeis().big = true) {
+            getPapeis().setStado(new Heal(getPapeis()));
         }
     }
 }
