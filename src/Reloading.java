@@ -1,4 +1,4 @@
-public class Reloading extends AbstractState {
+public class Reloading extends AbstractState<Soldado> {
 
     public Reloading(Soldado soldado) {
         super(soldado);
@@ -7,7 +7,7 @@ public class Reloading extends AbstractState {
 
     public void enter() {
         System.out.println("RECARREGANDO");
-        getSoldado().Shoot = false;
+        getPapeis().Shoot = false;
     }
 
     public void leave() {
@@ -15,11 +15,11 @@ public class Reloading extends AbstractState {
     }
 
     public void execute() {
-        getSoldado().subBala(10);
-        printStats("Ching, Ching ");
+        getPapeis().subBala(10);
+        getPapeis().printStats("Ching, Ching ");
 
-        if(getSoldado().getBala() >= 50) {
-            getSoldado().setStado(new Shooting(getSoldado()));
+        if(getPapeis().getBala() >= 50) {
+            getPapeis().setStado(new Shooting(getPapeis()));
         }
     }
 }
